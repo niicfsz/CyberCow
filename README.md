@@ -10,3 +10,7 @@ Projeto desenvolvido durante a minha formação como cientista da computação n
 - [Lucas Freitas](https://github.com/LucasFreitas1307)
 - [João Vitor](https://github.com/CAMPOZs)
 
+## Estrutura do programa
+- [Bibliotecas](https://github.com/niicfsz/CyberCow/tree/main/bibliotecas)
+- [Logo](https://github.com/niicfsz/CyberCow/blob/main/logo.md)
+- [Main](https://github.com/niicfsz/CyberCow/blob/main/main.md)
