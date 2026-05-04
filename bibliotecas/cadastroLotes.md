@@ -9,8 +9,8 @@ typedef struct {
     int lote, numeroAnimais, idadeMeses;
     float pesoAtual, ganhoPesoIdeal;
     char sexo[30];
-    float consumoAlimento; // Consumo de alimento
-    float custoAlimentacao; // Custo de alimentação
+    float consumoAlimento; 
+    float custoAlimentacao; 
 }Animal;
 
 void cadastrarLote(Animal animais[], int *quantidade) {
