@@ -13,7 +13,7 @@ void criarTarefa() {
     char tarefa[MAX_TAREFA];
     printf("Digite a descrição da tarefa (max %d caracteres): ", MAX_TAREFA );
     fgets(tarefa, MAX_TAREFA, stdin);
-    tarefa[strcspn(tarefa, "\n")] = '\0'; // Remover o '\n' do final
+    tarefa[strcspn(tarefa, "\n")] = '\0'; 
 
     fprintf(arquivo, "%s\n", tarefa);
     fclose(arquivo);
