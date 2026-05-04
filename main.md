@@ -34,8 +34,8 @@ int main()
     char senha[50], nome[50], senhaconf[50], nomearq[50], senhaarq[50];
     FILE *arqlogin;
 
-    Animal animais[MAX_ANIMAIS];  // Declarando a variável animais
-    int quantidadeAnimais = 0;  // Inicializando a quantidade de animais
+    Animal animais[MAX_ANIMAIS]; 
+    int quantidadeAnimais = 0; 
     float ganhoTotal = 0.0, gastoTotalRacao = 0;
     int numeroDeVendas = 0, quantidadeDeComprasDeRacao = 0;
 
@@ -136,9 +136,9 @@ int main()
                 break;
             }
 
-            int login_success = 0; // Variável de controle para login
+            int login_success = 0; 
 
-            while (login_success != 1) // Loop infinito até o login ser bem-sucedido
+            while (login_success != 1)
             {
                 limparTela();
                 printf("----LOGIN----\n");
@@ -153,21 +153,20 @@ int main()
                 getchar();
                 printf("Digite seu nome de usuário: ");
                 fgets(nome, sizeof(nome), stdin);
-                nome[strcspn(nome, "\n")] = '\0';  // Remover o '\n' no final da string
+                nome[strcspn(nome, "\n")] = '\0'; 
                 fflush(stdin);
 
                 printf("Digite sua senha: ");
                 fgets(senha, sizeof(senha), stdin);
-                senha[strcspn(senha, "\n")] = '\0';  // Remover o '\n' no final da string
+                senha[strcspn(senha, "\n")] = '\0';  
                 fflush(stdin);
 
-                // Percorrer o arquivo e verificar se o login é correto
                 int encontrado = 0;
                 while (fscanf(arqlogin, "%49[^,],%49[^,],%d\n", nomearq, senhaarq, &cargoarq) != EOF)
                 {
                     if (strcmp(nome, nomearq) == 0 && strcmp(senha, senhaarq) == 0)
                     {
-                        login_success = 1;  // Login bem-sucedido
+                        login_success = 1; 
                         encontrado = 1;
                         break;
                     }
@@ -175,7 +174,6 @@ int main()
 
                 if (encontrado==1)
                 {
-                    // Login bem-sucedido, seguir para o menu
                     do
                     {
                         limparTela();
@@ -273,11 +271,10 @@ int main()
                                 getchar();
                             }
                             break;
-                        case 9:  // Nova opção para registrar compras de ração e vendas de lote
+                        case 9:  
                             if (cargoarq == 2)
                             {
                                 int op3;
-                                // Exemplo de opção para registro e consulta de dados de ração
                                 limparTela();
                                 printf("--- Gestão de Ração e Vendas ---\n");
                                 printf("1 - Registrar dados de ração\n");
@@ -319,7 +316,6 @@ int main()
                     getchar();
                 }
 
-                // Reposicionar o ponteiro do arquivo para o começo após ler todas as entradas
                 fseek(arqlogin, 0, SEEK_SET);
             }
 
